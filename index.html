@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio práctico Skynet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body class="bg-dark">
+    <header class="bg-info text-dark">
+        <div class="row">
+            <div class="col">
+                <h1 class="mt-3 text-center"> Sistema Ingreso de Terminator</h1>
+            </div>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div class="row mt-5">
+            <!-- Formulario -->
+            <div class="col-lg-5 col-md-6 col-12">
+                <div class="card">
+                    <div class="card-header bg-info bg-gradient text-dark">
+                        <span class="h4">Formulario para registrar terminator</span>
+                    </div>
+                    <div class="card-body"> 
+                        <!-- ID= serie-txt-->
+                        <div class="mb-3">
+                            <label for="serie-txt" class="form-label">Numero de Serie</label>
+                            <input type="text" placeholder="Ingresar Numero de Serie" class="form-control" id="serie-txt" maxlength="7">
+                        </div>
+                        <!-- ID= tipo-select-->
+                        <div class="mb-3">
+                            <label for="tipo-select" class="form-label">Tipo</label>
+                            <select class="form-select" name="" id="tipo-select">
+                                <option value="0" selected>--- Seleccionar Tipo ---</option>
+                                <option value="T-1">T-1</option>
+                                <option value="T-800">T-800</option>
+                                <option value="T-1000">T-1000</option>
+                                <option value="T-3000">T-3000</option>
+                            </select>
+                        </div>
+                        <!-- ID= objetivo-txt-->
+                        <div class="mb-3">
+                            <label for="objetivo-txt" class="form-label">Nombre Objetivo</label>
+                            <input type="text" placeholder="Ingresar Nombre Objetivo" class="form-control" id="objetivo-txt">
+                        </div>
+                        <!-- ID= date-number-txt-->
+                        <div class="mb-3">
+                            <label for="date-number" class="form-label">Año de Destino</label>
+                            <input type="number" onkeyup="if(this.value>3000){this.value='3000';}" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="Ingresar Año de Destino" class="form-control" id="date-number" min="1997" max="3000">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-info bg-gradient text-light" id="registrar-btn">Registrar Terminator</button>
+                            <button type="button" class="btn btn-secondary" id="limpiar-btn">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Busqueda y Tabla -->
+            <div class="col-lg col-md col">
+                <!-- Buscador -->
+                 <div class="card mb-3">
+                    <div class="card-header bg-info text-dark">
+                        <span class="h4">Buscador de Terminator por Numero de Serie</span>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" placeholder="Ingresar Numero de Serie a buscar" class="form-control" id="buscar-txt" maxlength="7">
+                    </div>
+                 </div>
+                <!-- Tabla -->
+                <div class="card">
+                    <div class="card-header bg-info bg-gradient text-dark">
+                        <span class="h4">Tabla de renderizado de terminators existentes</span>
+                    </div>
+                    <!-- ID= robot-table -->
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover table-stripped">
+                            <thead>
+                                <th>Numero de Serie</th>
+                                <th>Tipo</th>
+                                <th>Objetivo</th>
+                                <th>Año de Destino</th>
+                                <th>Prioridad</th>
+                            </thead>
+                            <tbody id="robot-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script  type="text/javascript" src="js/index.js"></script>
+ </body>
+ <!-- Si alguien lee esto, me quedo bonito juas juas -->
+ <!-- Creo que me esforce de mas en un electivo -->
+ <!-- Mambo, mambo, omatsuri, mambo -->
+</html>
